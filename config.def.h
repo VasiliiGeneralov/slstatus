@@ -12,6 +12,9 @@ static const char unknown_str[] = "n/a";
 /*
  * function            description                     argument (example)
  *
+ * backlight_perc      backlight percentage            device name
+ *                                                     (intel_backlight)
+ *                                                     NULL on OpenBSD
  * battery_perc        battery percentage              battery name (BAT0)
  *                                                     NULL on OpenBSD/FreeBSD
  * battery_remaining   battery remaining HH:MM         battery name (BAT0)
@@ -68,5 +71,6 @@ static const struct arg args[] = {
 	{ keymap,   "[%s] ",        NULL},
 	{ battery_perc, "[%s%%] ",  "BAT0" },
 	{ vol_perc, "[v:%s%%] ",    "Master" },
+	{ backlight_perc, "[*:%s%%] ", "intel_backlight" },
 	{ datetime, "%s",           "%F %T" },
 };
